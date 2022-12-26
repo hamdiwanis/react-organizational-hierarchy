@@ -1,7 +1,8 @@
 # react-organizational-hierarchy
 
 > Simple react hierarchy tree - any React children accepted for nodes
-based on [react-organizational-chart](https://daniel-hauser.github.io/react-organizational-chart/) but replaces @emotion/css with css modules
+
+based on react-organizational-chart but replaces @emotion/css with css modules
 
 ## Install
 
