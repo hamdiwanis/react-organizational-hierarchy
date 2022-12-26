@@ -1,0 +1,71 @@
+.childrenContainer {
+    display: flex;
+    padding-inline-start: 0;
+    margin: 0;
+    padding-top: var(--tree-line-height);
+    position: relative;
+}
+
+.childrenContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: var(--tree-line-height);
+    box-sizing: border-box;
+
+    left: 50%;
+    width: 0;
+    border-left: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+.node {
+    flex: auto;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: var(--tree-line-height) var(--tree-node-padding) 0 var(--tree-node-padding);
+}
+
+.nodeLines::before,
+.nodeLines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: var(--tree-line-height);
+    box-sizing: border-box;
+
+    right: 50%;
+    width: 50%;
+    border-top: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+.nodeLines::after {
+    left: 50%;
+    border-left: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+.nodeLines:only-of-type {
+    padding: 0;
+}
+
+.nodeLines:only-of-type::after,
+.nodeLines:only-of-type:before {
+    display: none;
+}
+
+.nodeLines:first-of-type::before {
+    border: 0 none;
+}
+
+.nodeLines:first-of-type::after {
+    border-radius: var(--tree-line-border-radius) 0 0 0;
+}
+
+.nodeLines:last-of-type::before {
+    border-right: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+    border-radius: 0 var(--tree-line-border-radius) 0 0;
+}
+
+.nodeLines:last-of-type::after {
+    border: 0 none;
+}
